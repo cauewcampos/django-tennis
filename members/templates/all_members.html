@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html lang="pt-BR">
 <body>
-    <h1>Members</h1>
+
+{% extends 'master.html' %}
+
+{% block title %}
+    My Tennis Club - List of all members
+{% endblock %}
+
+{% block content %}
+
+    <h2>Members</h2>
 
     <ul>
         {% for x in mymembers %}
-            <li>{{x.firstname}} {{x.lastname}}</li>
+            <li><a href="details/{{ x.id }}">{{x.firstname}} {{x.lastname}}</a></li>
         {% endfor %}
-    </ul>  
+    </ul>
+{% endblock %}
 
 </body>
 </html>
